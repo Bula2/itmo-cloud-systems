@@ -1,0 +1,9 @@
+FROM ubuntu:latest
+MAINTAINER Dmitries
+LABEL version='1.0'
+RUN apt-get update
+RUN apt-get install -y python3
+COPY app.py /home/app.py
+ENV PERSON_NAME='Dmitrii'  
+WORKDIR /home
+CMD ["python3", "app.py"]
