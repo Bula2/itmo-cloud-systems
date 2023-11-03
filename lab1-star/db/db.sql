@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS mytable
+(
+    value VARCHAR(100) NOT NULL
+);
