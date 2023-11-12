@@ -1,0 +1,17 @@
+FROM python:3.8-slim
+
+MAINTAINER Dmitries
+
+LABEL version='1.0'
+
+RUN apt-get update && \
+    apt-get install -y python3 && \
+    useradd -m dmitrii
+
+USER dmitrii
+
+COPY hello-user.py /home/hello-user.py
+
+ENV PERSON_NAME='Dmitrii'  
+
+ENTRYPOINT ["python3", "hello-user.py"]
