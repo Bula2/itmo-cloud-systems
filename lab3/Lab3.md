@@ -105,8 +105,8 @@ jobs:
 
 ```
 - name: dockerhub login
-uses: docker/login-action@v3
-with:
+  uses: docker/login-action@v3
+  with:
     username: ${{ secrets.DOCKERHUB_USERNAME }}
     password: ${{ secrets.DOCKERHUB_PASSWORD }}
 ```
@@ -130,12 +130,15 @@ with:
 
 ![1](img/1.jpg)
 
-2. Проверим, запушилс ли образ в Docker Hub:
+2. Проверим, запушился ли образ в Docker Hub:
 
 ![2](img/2.jpg)
 
 3. Попробуем запустить запушенный образ на своем ноутбуке:
 
+![3](img/3.jpg)
+
+Как видим, все сработало успешно, а значит цель работы достигнута.
 
 ## Вывод:
 В ходе выполнения лабораторной работы был настроен CI/CD, благодаря которому после пуша в рабочий репозиторий создавался docker-образ и сохранялся в Docker Hub. Во время выполнения работы проблем не возникло. 
