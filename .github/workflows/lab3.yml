@@ -28,7 +28,7 @@ jobs:
       - name: build docker image and push to docker hub
         uses: docker/build-push-action@v5
         with:
-          context: ./lab3/
+          context: ./lab3
           file: ./Dockerfile-hello-user
           push: true
           tags: dramaerr/hello-user-image:latest, dramaerr/hello-user-image:version-${{ github.run_number }}
