@@ -7,7 +7,7 @@ on:
       - "lab3/**"
 
 jobs:
-  build-and-push:
+  lab3:
     runs-on: ubuntu-22.04
 
     defaults:
