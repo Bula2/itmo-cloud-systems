@@ -34,4 +34,4 @@ jobs:
         with:
           context: "./lab3/"
           push: true
-          tags: dramaerr/hello-user-image:version-${{date}}, dramaerr/hello-user-image:latest
+          tags: dramaerr/hello-user-image:version-${{ date }}, dramaerr/hello-user-image:latest
