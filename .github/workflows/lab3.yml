@@ -29,6 +29,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: "./lab3/"
-          file: "./Dockerfile"
           push: true
           tags: dramaerr/hello-user-image:latest, dramaerr/hello-user-image:version-${{ github.run_number }}
