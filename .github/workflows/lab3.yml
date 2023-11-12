@@ -30,4 +30,4 @@ jobs:
         with:
           context: "./lab3/"
           push: true
-          tags: dramaerr/hello-user-image:latest, dramaerr/hello-user-image:version-${{ github.run_number }}
+          tags: dramaerr/hello-user-image:latest, dramaerr/hello-user-image:version-$(date '+%Y%m%d%H%M%S')
