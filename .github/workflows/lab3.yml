@@ -7,7 +7,7 @@ on:
       - "lab3/**"
 
 jobs:
-  lab3:
+  push-to-docker-hub:
     runs-on: ubuntu-22.04
 
     defaults:
