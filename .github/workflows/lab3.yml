@@ -24,15 +24,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
 
-      - name: build docker image
-        run: sudo docker build -t hello-user-image -f Dockerfile-hello-user .
-
-      - name: push docker image to docker hub (latest)
-        run: sudo docker push dramaerr/hello-user-image:latest
-
-      - name: push docker image to docker hub (:version ${{ github.run_number }})
-        run: sudo docker push dramaerr/hello-user-image:version-${{ github.run_number }}
+      - name: build docker image and push to docker hub
+        uses: docker/build-push-action@v5
+        with:
+          context: ./lab3/
+          file: ./Dockerfile-hello-user
+          push: true
+          tags: dramaerr/hello-user-image:latest, dramaerr/hello-user-image:version-${{ github.run_number }}
