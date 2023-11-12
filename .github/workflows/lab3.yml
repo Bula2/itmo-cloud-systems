@@ -25,7 +25,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: build docker image
-        run: sudo docker build -t hello-user-image -f Dockerfile-hello-user .
+        run: sudo docker build -t hello-user-image -f .lab3/Dockerfile-hello-user .
 
       - name: push docker image to docker hub (latest)
         run: sudo docker push dramaerr/hello-user-image:latest
