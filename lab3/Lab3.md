@@ -19,7 +19,7 @@
 
 Для того, чтобы настроить Github Action, создадим файл с разрешением .yml в папке .github/workflows/.
 
-Содержимое созданного файла [lab3.yml]('../.github/workflows/lab3.yml') выглядят следующим образом:
+Содержимое созданного файла [lab3.yml](/.github/workflows/lab3.yml) выглядят следующим образом:
 
 ```
 name: lab3 
