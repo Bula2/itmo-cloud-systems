@@ -12,6 +12,8 @@ USER dmitrii
 
 COPY hello-user.py /home/hello-user.py
 
-ENV PERSON_NAME='Dmitrii'  
+ENV PERSON_NAME='Dmitrii'
+
+WORKDIR /home
 
 ENTRYPOINT ["python3", "hello-user.py"]
