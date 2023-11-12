@@ -5,7 +5,6 @@ on:
     branches: ["main"]
     paths:
       - "lab3/**"
-      - ".github/workflows/**"
 
 jobs:
   build-and-push:
@@ -13,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: "/lab-3"
+        working-directory: "/lab3"
 
     steps:
       - name: checkout repository
