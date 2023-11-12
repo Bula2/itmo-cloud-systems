@@ -25,10 +25,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: build docker image
-        run: docker build -t hello-user-image -f Dockerfile-hello-user .
+        run: sudo docker build -t hello-user-image -f Dockerfile-hello-user .
 
       - name: push docker image to docker hub (latest)
-        run: docker push dramaerr/hello-user-image:latest
+        run: sudo docker push dramaerr/hello-user-image:latest
 
       - name: push docker image to docker hub (:version ${{ github.run_number }})
-        run: docker push dramaerr/hello-user-image:version-${{ github.run_number }}
+        run: sudo docker push dramaerr/hello-user-image:version-${{ github.run_number }}
