@@ -1,0 +1,35 @@
+name: lab3 
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "lab3/**"
+      - ".github/workflows/**"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-22.04
+
+    defaults:
+      run:
+        working-directory: "/lab-3"
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: dockerhub login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: build docker image
+        run: docker build -t hello-user-image -f Dockerfile-hello-user .
+
+      - name: push docker image to docker hub (latest)
+        run: docker push dramaerr/hello-user-image:latest
+
+      - name: push docker image to docker hub (:version ${{ github.run_number }})
+        run: docker push dramaerr/hello-user-image:version-${{ github.run_number }}
